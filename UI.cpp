@@ -5,7 +5,7 @@
 #include "UI.h"
 
 // mode_names[4] = {"display_on", "display_off", "change_current_time", "change_alarm_time"};
-int mode = 0;
+int mode = 3;
 int mode_LED = A5;
 
 int wakeup_time[4] = {0, 7, 0, 0}; // default wakeup time set to 7:00 WARNING: do not set this to 0000 as this will immediately trigger the alarm
@@ -46,12 +46,13 @@ void add_one(){
     if (editing_digit == 1 and wakeup_time[0] == 2) {
       modulus = 4; // then the second digit cannot be more than 3
     }
-
+    
     // this is the main part: increasing the display by 1 
     wakeup_time[editing_digit] = (wakeup_time[editing_digit] + 1) % modulus; // add one to the editing_digit, and spill over from 9 to 0
 
     // update the display after an edit
-    update_display(wakeup_time);    
+    update_display(wakeup_time);  
+
   } else if (mode == 2) { // if we are editing the current time
 
     // if the time reads "2xxx", we need to modify the modulus

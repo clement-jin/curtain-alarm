@@ -1,17 +1,24 @@
 #include "display.h"
-#include "curtain_driver.h"
+
 
 int arduino_common_pins[4] = {13, 10, 9, 7};
 
 void update_display(int digits[4]) {
+
+//  Serial.print("array to be printed: ");
+//  print_array(digits);
+
+  int powers_of_10[4] = {1, 10, 100, 1000}; // the pow function was unreliable (see "double-int-conversionTest.ino")
   int input = 0;
 
   // we have to change the array into an integer for the sevseg.setNumber function
   for (int i=0; i < 4; i++){
-    input += digits[3-i] * pow(10, i);
+    input += digits[3-i] * powers_of_10[i];
   }
 
+//  Serial.println("number that is displayed: " + String(input));
 //  Serial.println(String(input));
+
   sevseg.setNumber(input);
 }
 

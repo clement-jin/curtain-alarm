@@ -57,3 +57,18 @@ void print_display_digits() {
     }
     Serial.println();
 }
+
+void print_wakeup_time() {
+    for (int i=0; i < 4; i++) {
+      Serial.print(wakeup_time[i]);
+    }
+    Serial.println();
+}
+
+void print_array(int arr[]) {
+  int len = (sizeof(arr)/sizeof(int)); // size in bytes of the array divided by size in bytes of each element gives us the number of elements
+  for (int i=0; i < 4; i++) {
+    Serial.print(arr[i]);
+  }
+  Serial.println();
+}

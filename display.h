@@ -3,6 +3,8 @@
 
 #include "Arduino.h"
 #include "SevSeg.h"
+#include "curtain_driver.h"
+#include "clock.h"
 
 void update_display(int display_digits[4]);
 void refresh_display();
