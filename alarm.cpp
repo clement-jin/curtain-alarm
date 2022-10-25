@@ -1,6 +1,6 @@
 #include "alarm.h"
 
-float hours_till_alarm = 9.25;
+float hours_till_alarm = 10;
 
 int transistor_pin = A0;
 unsigned long milliseconds_till_alarm = 1000ul * 60ul * 60ul * hours_till_alarm; // only takes the integer part of this calculation
