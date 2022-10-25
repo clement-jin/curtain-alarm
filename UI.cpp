@@ -5,7 +5,7 @@
 #include "UI.h"
 
 // mode_names[4] = {"display_on", "display_off", "change_current_time", "change_alarm_time"};
-int mode = 3;
+int mode = 0;
 int mode_LED = A5;
 
 int wakeup_time[4] = {0, 7, 0, 0}; // default wakeup time set to 7:00 WARNING: do not set this to 0000 as this will immediately trigger the alarm
@@ -72,26 +72,23 @@ void add_one(){
 
 void change_mode() {
   mode = (mode + 1) % 4; // next mode in the list, but go back to 0 if it spills over
+  editing_digit = 0; // reset editing digit to 0
 
   switch (mode) {
     case 0:
       show_display = true;
+      update_display(display_digits);
       break;
     case 1:
       show_display = false;
       break;
     case 2:
       show_display = false;
-
-      // redundant??
-      int static_current_time = display_digits;
-      update_display(static_current_time);
+      update_display(display_digits);
       break;
     case 3:
       show_display = false;
-      
-      int static_wakeup_time = wakeup_time;
-      update_display(static_wakeup_time);
+      update_display(wakeup_time);
       break;
   }
 

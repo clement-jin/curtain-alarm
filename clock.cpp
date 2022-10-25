@@ -9,6 +9,7 @@ bool show_display = true;
 unsigned long last_millis = millis();
 
 void update_clock() {
+
   // always update the display
   if (show_display) {
     refresh_display();
@@ -16,10 +17,10 @@ void update_clock() {
 
   // check if 1 minute has passed yet. If so, change the display time. 
   unsigned long current_millis = millis();
-  if (current_millis - last_millis >= 1000) { // this needs to be configured back to 60 seconds instead of 1 second. 
+  // Serial.println("current_millis: " + String(current_millis));
+  if (current_millis - last_millis >= 60000) { // this needs to be configured back to 60 seconds instead of 1 second. 
     last_millis = current_millis;
     increment_clock();
-    // Serial.println("1 second passed");
   }
 }
 
