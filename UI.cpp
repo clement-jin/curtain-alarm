@@ -76,18 +76,15 @@ void change_mode() {
 
   switch (mode) {
     case 0:
-      show_display = true;
       update_display(display_digits);
       break;
     case 1:
-      show_display = false;
+      sevseg.blank();
       break;
     case 2:
-      show_display = false;
       update_display(display_digits);
       break;
     case 3:
-      show_display = false;
       update_display(wakeup_time);
       break;
   }
@@ -105,13 +102,13 @@ void change_mode() {
 
 void display_on() {
   
-  update_clock();
+  update_clock(true);
   
 }
 
 void display_off() {
   
-  sevseg.blank();
+  update_clock(false);
 
 }
 
@@ -134,6 +131,8 @@ void change_alarm_time() {
     wakeup_time[1] %= 4; // take the modulus of the second digit to make sure it is less than 4
   }
 
-  // update display
+  // update display, while still keeping track of time
+  update_display(wakeup_time);
   refresh_display();
+  update_clock(false); 
 }

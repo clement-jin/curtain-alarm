@@ -4,11 +4,10 @@
 
 int time_mode = 24; // either 24 or 12, to signify 24 or 12 hour time respectively.
 int display_digits[4] = {0, 0, 0, 0};
-bool show_display = true;
 
 unsigned long last_millis = millis();
 
-void update_clock() {
+void update_clock(bool show_display) {
 
   // always update the display
   if (show_display) {
@@ -18,13 +17,13 @@ void update_clock() {
   // check if 1 minute has passed yet. If so, change the display time. 
   unsigned long current_millis = millis();
   // Serial.println("current_millis: " + String(current_millis));
-  if (current_millis - last_millis >= 60000) { // this needs to be configured back to 60 seconds instead of 1 second. 
+  if (current_millis - last_millis >= 1000) { // this needs to be configured back to 60 seconds instead of 1 second. 
     last_millis = current_millis;
-    increment_clock();
+    increment_clock(show_display);
   }
 }
 
-void increment_clock() {
+void increment_clock(bool show_display) {
   // this is a clumsy but sufficient way of rolling over digits. It is acceptable, as there are very few special cases that are easy to deal with.
   if (display_digits[3] != 9) { // if the last digit is not 9, we do not have to worry about rolling over
     display_digits[3] += 1;
@@ -49,7 +48,10 @@ void increment_clock() {
     print_display_digits();
   }
 
-  update_display(display_digits);
+  if (show_display == true) {
+    update_display(display_digits);
+  }
+  
 }
 
 void print_display_digits() {
