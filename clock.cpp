@@ -3,7 +3,7 @@
 
 
 int time_mode = 24; // either 24 or 12, to signify 24 or 12 hour time respectively.
-int display_digits[4] = {0, 0, 0, 0};
+int display_digits[4] = {0, 6, 5, 0};
 
 unsigned long last_millis = millis();
 

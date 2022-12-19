@@ -1,4 +1,5 @@
 #include "alarm.h"
+#include "display.h"
 
 float hours_till_alarm = 10;
 
@@ -7,7 +8,7 @@ unsigned long milliseconds_till_alarm = 1000ul * 60ul * 60ul * hours_till_alarm;
 unsigned long curtain_lift_milliseconds = 28ul * 1000ul;
 
 void lift_curtain() {
-
+  sevseg.blank();
   Serial.println(String("****************") + String("lifting curtain!") + String("*****************"));
 
   digitalWrite(transistor_pin, HIGH);
