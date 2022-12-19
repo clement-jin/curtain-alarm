@@ -91,7 +91,8 @@ void loop() {
 // this uses the voodoo function memcmp. Find more info at https://forum.arduino.cc/t/how-to-compare-arrays/76556/7
   if (memcmp( (const void *)display_digits, (const void *)wakeup_time, sizeof(display_digits)) == 0 and mode == 0) { // only lift the curtain if we are in display mode
     // Serial.println("lifting curtain!!!");
-    lift_curtain();
+//    lift_curtain();
+      ring_bell();
   }
 
 }

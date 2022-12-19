@@ -19,6 +19,22 @@ void lift_curtain() {
 
 }
 
+void ring_bell() {
+  
+  sevseg.blank();
+  Serial.println(String("****************") + String("lifting curtain!") + String("*****************"));
+
+  for (int i=0; i<10; i++){
+    digitalWrite(transistor_pin, HIGH);
+    delay(1000);
+    digitalWrite(transistor_pin, LOW);
+    delay(1000);
+  }
+
+  Serial.println(String("*****************") + String("done lifting curtain!") + String("*****************"));
+  
+}
+
 void wait_a_day() {
   unsigned long day_milliseconds = 86400000; // 1000ul * 60ul * 60ul * 24ul
   

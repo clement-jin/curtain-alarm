@@ -10,6 +10,7 @@ extern unsigned long curtain_lift_milliseconds;
 extern unsigned long day_milliseconds;
 
 void lift_curtain();
+void ring_bell();
 void wait_a_day();
 void update_clock();
 
