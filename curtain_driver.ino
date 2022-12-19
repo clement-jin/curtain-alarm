@@ -28,7 +28,7 @@ void setup() {
     digitalWrite(arduino_common_pins[i], HIGH);
   }
 
-    // seting configuration options for the library
+    // seting configuration options for the SevSeg library
   byte numDigits = 4;
   byte digitPins[] = {13, 10, 9, 7};
   byte segmentPins[] = {12, 8, 5, 3, 2, 11, 6, 4};
