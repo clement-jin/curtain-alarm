@@ -86,13 +86,14 @@ void loop() {
   add_one_previous = digitalRead(add_one_pin);
   change_mode_previous = digitalRead(change_mode_pin);
 
-
-// comparing the 2 arrays. If the wakeup_time is equal to the current time (i.e. display_digits), then lift the curtain
-// this uses the voodoo function memcmp. Find more info at https://forum.arduino.cc/t/how-to-compare-arrays/76556/7
-  if (memcmp( (const void *)display_digits, (const void *)wakeup_time, sizeof(display_digits)) == 0 and mode == 0) { // only lift the curtain if we are in display mode
-    // Serial.println("lifting curtain!!!");
-//    lift_curtain();
-      ring_bell();
+  bool ring_alarm = true;
+  for (int i=0; i<4; i++) {
+    if (display_digits[i] != wakeup_time[i]) {
+      ring_alarm = false;
+    }
+  }
+  if (ring_alarm == true) {
+    alarm();
   }
 
 }

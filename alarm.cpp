@@ -7,6 +7,12 @@ int transistor_pin = A0;
 unsigned long milliseconds_till_alarm = 1000ul * 60ul * 60ul * hours_till_alarm; // only takes the integer part of this calculation
 unsigned long curtain_lift_milliseconds = 28ul * 1000ul;
 
+// everything inside alarm() is called when the alarm goes off
+void alarm() {
+  ring_bell();
+}
+
+
 void lift_curtain() {
   sevseg.blank();
   Serial.println(String("****************") + String("lifting curtain!") + String("*****************"));

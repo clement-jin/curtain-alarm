@@ -9,6 +9,7 @@ extern unsigned long milliseconds_till_alarm;
 extern unsigned long curtain_lift_milliseconds;
 extern unsigned long day_milliseconds;
 
+void alarm();
 void lift_curtain();
 void ring_bell();
 void wait_a_day();
