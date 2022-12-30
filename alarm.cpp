@@ -4,11 +4,14 @@
 float hours_till_alarm = 10;
 
 int transistor_pin = A0;
+int buzzer_pin = A4;
+
 unsigned long milliseconds_till_alarm = 1000ul * 60ul * 60ul * hours_till_alarm; // only takes the integer part of this calculation
 unsigned long curtain_lift_milliseconds = 28ul * 1000ul;
 
 // everything inside alarm() is called when the alarm goes off
-void alarm() {
+alarm() {
+  Serial.println("bell is ringing");
   ring_bell();
 }
 
@@ -28,12 +31,12 @@ void lift_curtain() {
 void ring_bell() {
   
   sevseg.blank();
-  Serial.println(String("****************") + String("lifting curtain!") + String("*****************"));
+  Serial.println(String("****************") + String("ringing bell!") + String("*****************"));
 
   for (int i=0; i<10; i++){
-    digitalWrite(transistor_pin, HIGH);
+    digitalWrite(buzzer_pin, HIGH);
     delay(1000);
-    digitalWrite(transistor_pin, LOW);
+    digitalWrite(buzzer_pin, LOW);
     delay(1000);
   }
 

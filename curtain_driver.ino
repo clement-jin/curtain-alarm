@@ -49,6 +49,8 @@ void setup() {
   pinMode(change_mode_pin, INPUT_PULLUP);
   
   pinMode(mode_LED, OUTPUT);
+  pinMode(buzzer_pin, OUTPUT);
+  pinMode(transistor_pin, OUTPUT);
 
   update_display(display_digits); // initially, we manually update the display so it turns on
 
