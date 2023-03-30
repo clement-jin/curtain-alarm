@@ -28,15 +28,7 @@ void refresh_display() {
 
 
 /*
-int actual_segment_pins[8] = {11, 7, 4, 2, 1, 10, 5, 3}; // The pin numbers of segments {A, B, C, D, E, F, G, .} respectively ON THE DISPLAY ITSELF
 int arduino_segment_pins[8] = {12, 8, 5, 3, 2, 11, 6, 4}; // The pin numbers of segments {A, B, C, D, E, F, G, .} respectively ON THE ARDUINO.
-
-// this means that to light up segment A, we need to light up pin 11 on the display, but that would mean telling the arduino to light up pin 12. Thus,
-// we have to connect pin 11 on the display with pin 12 on the arduino. This is done because we cannot use pins 0 nor 1 for driving LEDs as they are
-// communication pins. ONLY USE "arduino_segment_pins"; the "actual_segment_pins" are only here for reference.
-
-
-int actual_common_pins[4] = {12, 9, 8, 6}; // the pin numbers of common pins {1, 2, 3, 4} respectively on the display itself. This is here purely for reference.
 int arduino_common_pins[4] = {13, 10, 9, 7}; // the same principle works behind these as the "actual_segment_pins" and "arduino_segment_pins"
 
 

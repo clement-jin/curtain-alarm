@@ -118,9 +118,6 @@ void change_current_time() {
   if (display_digits[0] == 2) {
     display_digits[1] %= 4; // take the modulus of the second digit to make sure it is less than 4
   }
-
-  // refresh display
-  // update_display(display_digits);
   refresh_display();
 }
 
@@ -131,8 +128,6 @@ void change_alarm_time() {
     wakeup_time[1] %= 4; // take the modulus of the second digit to make sure it is less than 4
   }
 
-  // update display, while still keeping track of time
-  update_display(wakeup_time);
   refresh_display();
   update_clock(false); 
 }
