@@ -6,11 +6,11 @@ int transistor_pin = A0;
 int buzzer_pin = A4;
 
 // buzzer configuration
-int no_buzzes = 2;
+int no_buzzes = 5;
 int buzz_duration = 1000; // how long each buzz and each delay lasts
 
 // motor configuration
-int curtain_lift_duration = 10000;
+int curtain_lift_duration = 310000;
 
 
 // everything inside alarm() is called when the alarm goes off
