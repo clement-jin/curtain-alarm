@@ -9,7 +9,7 @@
 int mode = 0;
 int mode_LED = A5;
 
-int wakeup_time[4] = {0, 0, 0, 0}; // default wakeup time set to 7:00 WARNING: do not set this to 0000 as this will immediately trigger the alarm
+int wakeup_time[4] = {2, 0, 0, 5}; // default wakeup time set to 7:00 WARNING: do not set this to 0000 as this will immediately trigger the alarm
 int editing_digit = 0;
 
 int digit_mods[4] = {3, 10, 6, 10}; // this specifies the largest value of each digit (e.g. the alarm clock cannot read 25:72). The digit d is taken mod digit_mods[d] to ensure this
