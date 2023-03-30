@@ -51,3 +51,16 @@ alarm() {
   }
   
 }
+
+
+check_alarm() {
+  bool ring_alarm = true;
+  for (int i=0; i<4; i++) {
+    if (display_digits[i] != wakeup_time[i]) {
+      ring_alarm = false;
+    }
+  }
+  if (ring_alarm == true) {
+    alarm();
+  }
+}

@@ -3,6 +3,7 @@
  * 
  */
 #include "UI.h"
+#include "alarm.h"
 
 // mode_names[4] = {"display_on", "display_off", "change_current_time", "change_alarm_time"};
 int mode = 0;
@@ -103,12 +104,14 @@ void change_mode() {
 void display_on() {
   
   update_clock(true);
+  check_alarm();
   
 }
 
 void display_off() {
   
   update_clock(false);
+  check_alarm();
 
 }
 

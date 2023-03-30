@@ -11,10 +11,6 @@ extern unsigned long curtain_lift_milliseconds;
 extern unsigned long day_milliseconds;
 
 extern alarm();
-
-void lift_curtain();
-void ring_bell();
-void wait_a_day();
-void update_clock();
+extern check_alarm(); // checks if it is time to run the alarm and does so if the time is right
 
 #endif

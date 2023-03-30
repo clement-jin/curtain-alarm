@@ -87,15 +87,4 @@ void loop() {
   next_digit_previous = digitalRead(next_digit_pin);
   add_one_previous = digitalRead(add_one_pin);
   change_mode_previous = digitalRead(change_mode_pin);
-
-  bool ring_alarm = true;
-  for (int i=0; i<4; i++) {
-    if (display_digits[i] != wakeup_time[i]) {
-      ring_alarm = false;
-    }
-  }
-  if (ring_alarm == true) {
-    alarm();
-  }
-
 }
