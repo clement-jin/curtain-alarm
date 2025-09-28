@@ -1,7 +1,7 @@
 # Mechatronic Alarm Clock
 Made as part of my interview for the Arkwright Engineering Scholarship. \
 This alarm clock raises the curtains at a set time while beeping, letting in natural sunlight. It included a 7-segment display, programmable using buttons, and custom 3D printed parts. \
-A summary of the project is included in ```Curtain Alarm Design.pdf``` and ```Arkwright Presentation.pptx```. Thank you to Dr David Roche for supporting my application process. 
+A summary of the project is included in 9```Curtain Alarm Design.pdf```](https://github.com/clement-jin/curtain-alarm/blob/main/Motor%20Alarm%20Design.pdf) and [```Arkwright Presentation.pptx```](https://github.com/clement-jin/curtain-alarm/blob/main/Arkwright%20Presentation%20v_1.pptx). Thank you to Dr David Roche for supporting my application process. 
 
 ## Requirements
 The ```SevSeg``` library from [https://github.com/DeanIsMe/SevSeg](https://github.com/DeanIsMe/SevSeg) is used to control the display. 
