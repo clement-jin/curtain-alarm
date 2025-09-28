@@ -1,7 +1,9 @@
 # Mechatronic Alarm Clock
-Made as part of my interview for the Arkwright Engineering Scholarship. \
+Made as part of my interview for the Arkwright Engineering Scholarship. 
+
+> A pdf summary of the project can be found [here](https://github.com/clement-jin/curtain-alarm/blob/main/supporting-material/Motor%20Alarm%20Design.pdf), and the presentation used in the interview [here](https://github.com/clement-jin/curtain-alarm/blob/main/supporting-material/Arkwright%20Presentation.pptx)
+
 This alarm clock raises the curtains at a set time while beeping. It included a motor, buzzer module, custom 3D printed parts, and a 7-segment display programmable using buttons.
-A pdf summary of the project can be found [here](https://github.com/clement-jin/curtain-alarm/blob/main/supporting-material/Motor%20Alarm%20Design.pdf), and the presentation used in the interview [here](https://github.com/clement-jin/curtain-alarm/blob/main/supporting-material/Arkwright%20Presentation.pptx) \
 Thank you to Dr David Roche for supporting my application process. 
 
 ## Requirements
